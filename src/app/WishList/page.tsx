@@ -4,14 +4,14 @@ import GetUserWishListApi from "@/API/GetUserWishList/GetUserWishListApi";
 import React, { useContext, useEffect, useState } from "react";
 import  Image  from 'next/image';
 import { GetUserWishListType } from "@/types/GetUserWishListType.type";
-import { WishListContext } from "@/WishListContextProvider/WishListContextProvider";
+import { useWishList } from "@/WishListContextProvider/WishListContextProvider";
 
 
 export default function WishList() {
   const [products, setProducts] = useState([]);
   const [isLoading,setIsLoading]=useState(false);
   const [currentId,setCurrentId]=useState("");
-  const {setWishcountNumber}=useContext(WishListContext);
+  const {setWishcountNumber}=useWishList();;
   async function WishListApi() {
     const { data } = await GetUserWishListApi();
     console.log(data);

@@ -3,14 +3,15 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
-import { WishListContext } from "@/WishListContextProvider/WishListContextProvider";
 import { CartContext } from "@/app/CartContextProvider/CartContextProvider";
+import { useWishList } from "@/WishListContextProvider/WishListContextProvider";
+
 
 
 export default function Navbar() {
   const path = usePathname();
   const { data: session } = useSession();
-  const { wishcountNumber } = useContext(WishListContext);
+  const { wishcountNumber } = useWishList();
 
   // ✅ Handle possible undefined CartContext safely
   const cartContext = useContext(CartContext);
