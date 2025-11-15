@@ -19,7 +19,7 @@ export default function GetSinglePost({ product }:{product:ProductType}) {
       <Card>
         <Link href={`/Products/${product.id}`}>
           <CardHeader>
-            <CardTitle>
+            <CardTitle className="flex justify-center align-middle">
               <Image src={product.imageCover} alt="image" width={200} height={200} />
             </CardTitle>
             <CardDescription>{product.category.name}</CardDescription>

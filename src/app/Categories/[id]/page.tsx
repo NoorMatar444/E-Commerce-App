@@ -11,3 +11,4 @@ export default async function dynamicCategories({params}:{params:Promise<{id:str
     </div>
   )
 }
+

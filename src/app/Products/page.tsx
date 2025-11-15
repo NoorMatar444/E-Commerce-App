@@ -7,8 +7,8 @@ export default async function Products() {
   return (
     <>
       <div className="container w-[80%] mx-auto my-7">
-          <div className='flex flex-wrap gap-5'>
-            {data.map((currentProduct:ProductType)=>( <div className='w-1/5' key={currentProduct.id}>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
+            {data.map((currentProduct:ProductType)=>( <div className='my-3 mx-3' key={currentProduct.id}>
               <GetSinglePost product={currentProduct} />
             </div>))}
           </div>

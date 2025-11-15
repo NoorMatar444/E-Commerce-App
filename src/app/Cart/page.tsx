@@ -140,7 +140,6 @@ const { countNumber, setcountNumber } = context;
                 
                 <div className="flex items-center gap-4">
                   <button disabled={isDesiabledUpdate} onClick={()=>updateProduct(product.product.id,`${product.count+1}`,"+")}><i className="fa-solid fa-plus"></i></button>
-                  
                   {currentId===product.product.id?isLoadingCount?<i className="fa-solid fa-spinner fa-spin"></i>:product.count:product.count}
                   <button disabled={isDesiabledUpdate} onClick={()=>updateProduct(product.product.id,`${product.count-1}`,"-")}><i className="fa-solid fa-minus"></i></button>
                 </div>
