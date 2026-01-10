@@ -15,7 +15,7 @@ export const RegisterSchema = z
       .regex(/^01[0125][0-9]{8}$/),
   })
   .refine((object) => object.password === object.rePassword, {
-    path: ["repassword"],
-    message: "password and repassword not match",
+    path: ["rePassword"],
+    message: "password and rePassword not match",
   });
 export type registerSchemaType = z.infer<typeof RegisterSchema>;

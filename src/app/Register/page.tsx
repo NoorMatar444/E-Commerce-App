@@ -44,6 +44,7 @@ export default function Register() {
       }
     }
     catch(err:unknown){
+      console.log(err)
       if(err instanceof AxiosError){
          toast.error("error.",{position:"top-center",duration:3000})
       }
@@ -52,7 +53,7 @@ export default function Register() {
   return (
     <>
       <div className="container w-1/2 mx-auto my-5">
-        <Form {...form}>
+        <Form {...form} >
           <form onSubmit={form.handleSubmit(handleRegister)}>
             <FormField
               control={form.control}
@@ -87,7 +88,7 @@ export default function Register() {
                 <FormItem>
                   <FormLabel>password:</FormLabel>
                   <FormControl>
-                    <Input {...field} type="password"/>
+                    <Input {...field} type="password" autoComplete="off"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -100,7 +101,7 @@ export default function Register() {
                 <FormItem>
                   <FormLabel>rePassword:</FormLabel>
                   <FormControl>
-                    <Input {...field} type="password"/>
+                    <Input {...field} type="password" autoComplete="off"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -113,7 +114,7 @@ export default function Register() {
                 <FormItem>
                   <FormLabel>phone:</FormLabel>
                   <FormControl>
-                    <Input {...field}/>
+                    <Input {...field} autoComplete="off"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>

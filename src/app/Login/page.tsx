@@ -58,7 +58,7 @@ export default function Login() {
                 <FormItem>
                   <FormLabel>email:</FormLabel>
                   <FormControl>
-                    <Input {...field}/>
+                    <Input {...field} autoComplete="off"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -71,7 +71,7 @@ export default function Login() {
                 <FormItem>
                   <FormLabel>password:</FormLabel>
                   <FormControl>
-                    <Input {...field} type="password"/>
+                    <Input {...field} type="password" autoComplete="off"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
