@@ -2,23 +2,23 @@
 import DeleteWishListApi from "@/API/DeleteWishList/DeleteWishListApi";
 import GetUserWishListApi from "@/API/GetUserWishList/GetUserWishListApi";
 import React, { useContext, useEffect, useState } from "react";
-import  Image  from 'next/image';
+import Image from 'next/image';
 import { GetUserWishListType } from "@/types/GetUserWishListType.type";
 import { useWishList } from "@/WishListContextProvider/WishListContextProvider";
 
 
 export default function WishList() {
   const [products, setProducts] = useState([]);
-  const [isLoading,setIsLoading]=useState(false);
-  const [currentId,setCurrentId]=useState("");
-  const {setWishcountNumber}=useWishList();;
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentId, setCurrentId] = useState("");
+  const { setWishcountNumber } = useWishList();;
   async function WishListApi() {
     const { data } = await GetUserWishListApi();
     console.log(data);
     setProducts(data);
     setWishcountNumber(data.length);
   }
-  async function deleteItem(id:string) {
+  async function deleteItem(id: string) {
     setCurrentId(id)
     setIsLoading(true)
     const data = await DeleteWishListApi(id);
@@ -32,7 +32,7 @@ export default function WishList() {
   return (
     <>
       <div className="container w-[80%] mx-auto ">
-        {products.map((product:GetUserWishListType) => (
+        {products.map((product: GetUserWishListType) => (
           <tr
             key={product._id}
             className="w-full grid grid-cols-1 sm:grid-cols-4 bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
@@ -46,7 +46,7 @@ export default function WishList() {
                 alt="Apple Watch"
               />
             </td>
-            
+
             <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white flex justify-center items-center">
               {product.title}
             </td>
@@ -55,7 +55,7 @@ export default function WishList() {
               {product.price}
             </td>
             <td className="px-6 py-4 flex justify-center items-center">
-              {currentId===product._id?isLoading?<i className="fa-solid fa-circle-notch fa-spin"></i>:<button className="bg-red-700 text-white p-3 rounded-3xl w-25 cursor-pointer" onClick={() => deleteItem(product.id)}>Rmove</button>:<button className="bg-red-700 text-white p-3 rounded-3xl w-25 cursor-pointer" onClick={() => deleteItem(product.id)}>Rmove</button>}
+              {currentId === product._id ? isLoading ? <i className="fa-solid fa-circle-notch fa-spin"></i> : <button className="bg-red-700 text-white p-3 rounded-3xl w-25 cursor-pointer" onClick={() => deleteItem(product.id)}>Remove</button> : <button className="bg-red-700 text-white p-3 rounded-3xl w-25 cursor-pointer" onClick={() => deleteItem(product.id)}>Remove</button>}
             </td>
           </tr>
         ))}

@@ -7,7 +7,6 @@ import Products from "./Products/page";
 export default function Home() {
   return (
     <div >
-      
       <MainSlider/>
       <HomeCategory/>
       <div className="container w-[80%] mx-auto">

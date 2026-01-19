@@ -29,7 +29,7 @@ export default function HomeCategorySlider({ info }:HomeCategorySliderProps) {
                   src={category.image}
                   alt={category.name}
                   fill
-                  className="object-cover"
+                  className="object-cover" // fill space
                 />
               </div>
               <p className="text-sm mt-2">{category.name}</p>
