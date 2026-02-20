@@ -22,7 +22,7 @@ export default function Cart() {
   const [RemoveId,setRemoveId]=useState("")
   const [cartId,setcartId]=useState("");
   const [isDelete,setIsDelete]=useState(false);
- const context = useContext(CartContext);
+  const context = useContext(CartContext);
 if (!context) {
   throw new Error("CartContext must be used within CartContextProvider");
 }
