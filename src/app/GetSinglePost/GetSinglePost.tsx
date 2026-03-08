@@ -16,6 +16,7 @@ export default function GetSinglePost({ product }:{product:ProductType}) {
   console.log(product);
   return (
     <>
+    
       <Card>
         <Link href={`/Products/${product.id}`}>
           <CardHeader>

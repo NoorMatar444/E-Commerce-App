@@ -4,6 +4,7 @@ import { ProductType } from './../../types/Product.type';
 import GetProducts from '@/API/GetProducts/GetProductsApi';
 export default async function Products() {
   const data= await GetProducts();
+  console.log(data);
   return (
     <>
       <div className="container w-[80%] mx-auto my-7">
