@@ -22,8 +22,8 @@ export default function Login() {
   
   const form = useForm<loginSchemaType>({
     defaultValues: {
-      email: "",
-      password: "",
+      email: "noor@example.com",
+      password: "123456",
     },
     resolver:zodResolver(LoginSchema)
   });
@@ -47,15 +47,15 @@ export default function Login() {
   }
   return (
     <>
-      <div className="container w-1/2 mx-auto my-5">
+      <div className="container w-1/2 mx-auto my-5  bg-gray-50 p-5 rounded-3xl shadow-lg">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleLogin)}>
             <FormField
               control={form.control}
               name="email"
               render={({field}) => (
-                <FormItem>
-                  <FormLabel>email:</FormLabel>
+                <FormItem className="my-4">
+                  <FormLabel>Email:</FormLabel>
                   <FormControl>
                     <Input {...field} autoComplete="off"/>
                   </FormControl>
@@ -67,8 +67,8 @@ export default function Login() {
               control={form.control}
               name="password"
               render={({field}) => (
-                <FormItem>
-                  <FormLabel>password:</FormLabel>
+                <FormItem className="my-4">
+                  <FormLabel>Password:</FormLabel>
                   <FormControl>
                     <Input {...field} type="password" autoComplete="off"/>
                   </FormControl>
@@ -76,7 +76,10 @@ export default function Login() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="my-3" variant="outline">Login</Button>
+            <div className="button flex justify-center">
+              <Button type="submit" className="my-3" variant="outline">Login</Button>
+            </div>
+            
           </form>
         </Form>
         

@@ -23,12 +23,12 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-green-700 w-full text-white">
+    <nav className="bg-green-600 w-full text-white">
       <div className="container w-full lg:w-[80%] p-2 mx-auto flex flex-col gap-5 lg:flex-row justify-between">
         {/* Left Side */}
         <div className="first">
           <ul className="flex lg:gap-4 gap-8 items-center">
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-2 hover:text-green-200">
               <Link className={path === "/" ? "active" : ""} href="/">
                 <i className="fa-solid fa-cart-shopping"></i>
               </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
             </li>
 
             <li>
-              <Link className={path === "/" ? "active" : ""} href="/">
+              <Link className={`${path === "/" ? "active" : ""} hover:text-green-200`} href="/">
                 Home
               </Link>
             </li>
@@ -45,7 +45,7 @@ export default function Navbar() {
             {session && (
               <li className="relative">
                 <Link
-                  className={`relative ${path === "/Cart" ? "active" : ""}`}
+                  className={`relative ${path === "/Cart" ? "active" : ""} hover:text-green-200`}
                   href="/Cart"
                 >
                   Cart
@@ -61,15 +61,15 @@ export default function Navbar() {
             {/* 📦 Other Pages */}
             <li>
               <Link
-                className={path === "/Products" ? "active" : ""}
+                className={`${path === "/Products" ? "active" : ""} hover:text-green-200`}
                 href="/Products"
               >
-                Products
+                All Products
               </Link>
             </li>
             <li>
               <Link
-                className={path === "/Categories" ? "active" : ""}
+                className={`${path === "/Categories" ? "active" : ""} hover:text-green-200`}
                 href="/Categories"
               >
                 Categories
@@ -77,7 +77,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                className={path === "/Brands" ? "active" : ""}
+                className={`${path === "/Brands" ? "active" : ""} hover:text-green-200`}
                 href="/Brands"
               >
                 Brands
@@ -87,7 +87,7 @@ export default function Navbar() {
             {session && (
               <li>
                 <Link
-                  className={path === "/Address" ? "active" : ""}
+                  className={`${path === "/Address" ? "active" : ""} hover:text-green-200`}
                   href="/Address"
                 >
                   Address
@@ -98,10 +98,10 @@ export default function Navbar() {
             {/* 💖 Wishlist */}
             <li className="relative">
               <Link
-                className={`relative ${path === "/WishList" ? "active" : ""}`}
+                className={`relative ${path === "/WishList" ? "active" : ""} hover:text-green-200`}
                 href="/WishList"
               >
-                <i className="fa-solid fa-clipboard-list"></i>
+                Wishlist
                 {wishcountNumber > 0 && (
                   <span className="absolute -top-2 -end-3 flex size-5 bg-white rounded-full justify-center items-center text-emerald-600 text-sm font-bold">
                     {wishcountNumber}
@@ -115,38 +115,30 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="last">
           <ul className="flex lg:gap-4 gap-8 items-center">
-            {["instagram", "facebook", "twitter", "linkedin", "youtube"].map(
-              (platform) => (
-                <li key={platform}>
-                  <Link href="">
-                    <i className={`fa-brands fa-${platform}`}></i>
-                  </Link>
-                </li>
-              )
-            )}
+           
 
             {!session ? (
               <>
                 <li>
                   <Link
-                    className={path === "/Register" ? "active" : ""}
+                    className={`${path === "/Register" ? "active" : ""} hover:text-green-200`}
                     href="/Register"
                   >
-                    Register
+                    signup
                   </Link>
                 </li>
                 <li>
                   <Link
-                    className={path === "/Login" ? "active" : ""}
+                    className={`${path === "/Login" ? "active" : ""} hover:text-green-200`}
                     href="/Login"
                   >
-                    Login
+                    signin
                   </Link>
                 </li>
               </>
             ) : (
               <li>
-                <span className="cursor-pointer" onClick={Logout}>
+                <span className="cursor-pointer hover:text-green-200" onClick={Logout}>
                   Logout
                 </span>
               </li>

@@ -31,9 +31,9 @@ export default function AddBtn({id}:{id:string}) {
     }
 
   return (
-    <div>
-      <Button className='w-full bg-yellow-400 text-white' onClick={()=>reciveAddToWishListApi(id)} variant="outline">Add to wish list</Button>
-      <Button className='w-full bg-black text-white' onClick={()=>reciveAddToCartApi(id)} variant="outline">Add to cart</Button>
+    <div className='flex justify-around'>
+      <Button className='w-1/3 bg-yellow-400 text-white' onClick={()=>reciveAddToWishListApi(id)} variant="outline"><i className="fa-solid fa-heart"></i></Button>
+      <Button className='w-1/3 bg-black text-white' onClick={()=>reciveAddToCartApi(id)} variant="outline"><i className="fa-solid fa-cart-arrow-down"></i></Button>
     </div>
   )
 }

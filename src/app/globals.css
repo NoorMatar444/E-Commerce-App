@@ -147,7 +147,7 @@
   100% {transform: rotate(1turn)}
 }
 .active{
-  color:blue
+  color:#FACC15;
   
 }
 /* HTML: <div class="loader"></div> */

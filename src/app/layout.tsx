@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 import MySessionProvider from "@/MySessionProvider/MySessionProvider";
 import CartContextProvider from "./CartContextProvider/CartContextProvider";
 import WishListContextProvider from "@/WishListContextProvider/WishListContextProvider";
+import Footer from './footer/Footer';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,15 +35,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <WishListContextProvider>
-          <MySessionProvider>
-            <CartContextProvider>
-              <Navbar />
-              {children}
-              <Toaster richColors position="top-center" />
-            </CartContextProvider>
-          </MySessionProvider>
-        </WishListContextProvider>
+        <div className="min-h-screen flex flex-col">
+          <WishListContextProvider>
+            <MySessionProvider>
+              <CartContextProvider>
+                <Navbar />
+                <main className="flex-grow">
+                  {children}
+                </main>
+                <Footer />
+                <Toaster richColors position="top-center" />
+              </CartContextProvider>
+            </MySessionProvider>
+          </WishListContextProvider>
+        </div>
+
       </body>
     </html>
   );

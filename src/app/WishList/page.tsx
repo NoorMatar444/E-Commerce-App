@@ -31,7 +31,7 @@ export default function WishList() {
   }, []);
   return (
     <>
-      <div className="container w-[80%] mx-auto ">
+      <div className="container w-[80%] mx-auto  ">
         {products.map((product: GetUserWishListType) => (
           <tr
             key={product._id}
