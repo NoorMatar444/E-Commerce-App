@@ -10,22 +10,25 @@ export default async function ProductDetails({params}:{params:Promise<{id:string
     console.log(data)
   return (
     <>
-      <div className="container w-[80%] mx-auto p-4 flex items-center gap-10">
+      <div className="container w-[80%] mx-auto p-4 flex items-center gap-10 h-screen align-middle">
         <div className="first w-1/4">
           <Image src={data.imageCover} alt="image" width={200} height={200}/>
         </div>
         <div className="last w-3/4">
-          <p>{data.title}</p>
-          <p>{data.description}</p>
-          <p>{data.category.name}</p>
-           <div className="w-full flex justify-between">
+          <p className='mb-5'>{data.title}</p>
+          <p className='mb-5'>{data.description}</p>
+          <p className='mb-5'>{data.category.name}</p>
+          <div className="w-full flex justify-between mb-5">
             <span>{data.price} EGP</span>
             <span>
               <i className="text-yellow-400 fa-solid fa-star"></i>
               {data.ratingsAverage}
             </span>
           </div>
-          <AddBtn id={id}/>
+          <div className='mb-5'>
+            <AddBtn id={id}/>
+          </div>
+          
         </div>
       </div>
     </>

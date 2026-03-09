@@ -14,7 +14,7 @@ interface HomeCategorySliderProps {
 export default function HomeCategorySlider({ info }:HomeCategorySliderProps) {
   return (
     <>
-      <div className="container w-[80%] mx-auto my-4 flex ">
+      <div className="container w-[80%] mx-auto my-4 flex shadow-lg rounded-lg my-4">
         <Swiper
           spaceBetween={0}
           slidesPerView={5}

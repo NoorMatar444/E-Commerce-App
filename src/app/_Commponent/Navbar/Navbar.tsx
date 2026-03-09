@@ -23,7 +23,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-green-700 w-full text-white">
+    <nav className="bg-green-600 w-full text-white">
       <div className="container w-full lg:w-[80%] p-2 mx-auto flex flex-col gap-5 lg:flex-row justify-between">
         {/* Left Side */}
         <div className="first">
@@ -64,7 +64,7 @@ export default function Navbar() {
                 className={path === "/Products" ? "active" : ""}
                 href="/Products"
               >
-                Products
+                All Products
               </Link>
             </li>
             <li>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 className={`relative ${path === "/WishList" ? "active" : ""}`}
                 href="/WishList"
               >
-                <i className="fa-solid fa-clipboard-list"></i>
+                WishList
                 {wishcountNumber > 0 && (
                   <span className="absolute -top-2 -end-3 flex size-5 bg-white rounded-full justify-center items-center text-emerald-600 text-sm font-bold">
                     {wishcountNumber}
@@ -115,15 +115,7 @@ export default function Navbar() {
         {/* Right Side */}
         <div className="last">
           <ul className="flex lg:gap-4 gap-8 items-center">
-            {["instagram", "facebook", "twitter", "linkedin", "youtube"].map(
-              (platform) => (
-                <li key={platform}>
-                  <Link href="">
-                    <i className={`fa-brands fa-${platform}`}></i>
-                  </Link>
-                </li>
-              )
-            )}
+           
 
             {!session ? (
               <>
@@ -132,7 +124,7 @@ export default function Navbar() {
                     className={path === "/Register" ? "active" : ""}
                     href="/Register"
                   >
-                    Register
+                    Signup
                   </Link>
                 </li>
                 <li>
@@ -140,7 +132,7 @@ export default function Navbar() {
                     className={path === "/Login" ? "active" : ""}
                     href="/Login"
                   >
-                    Login
+                    Signin
                   </Link>
                 </li>
               </>
