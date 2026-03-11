@@ -23,20 +23,20 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-green-600 w-full text-white">
+    <nav className="bg-[#0B172A] w-full text-white">
       <div className="container w-full lg:w-[80%] p-2 mx-auto flex flex-col gap-5 lg:flex-row justify-between">
         {/* Left Side */}
         <div className="first">
           <ul className="flex lg:gap-4 gap-8 items-center">
             <li className="flex items-center gap-2">
-              <Link className={path === "/" ? "active" : ""} href="/">
+              <Link className={`${path === "/" ? "active" : ""} hover:text-[#F9A08B]`} href="/">
                 <i className="fa-solid fa-cart-shopping"></i>
               </Link>
               FreshCart
             </li>
 
             <li>
-              <Link className={path === "/" ? "active" : ""} href="/">
+              <Link className={`${path === "/" ? "active" : ""} hover:text-[#F9A08B]`} href="/">
                 Home
               </Link>
             </li>
@@ -45,7 +45,7 @@ export default function Navbar() {
             {session && (
               <li className="relative">
                 <Link
-                  className={`relative ${path === "/Cart" ? "active" : ""}`}
+                  className={`relative ${path === "/Cart" ? "active" : ""} hover:text-[#F9A08B]`}
                   href="/Cart"
                 >
                   Cart
@@ -61,7 +61,7 @@ export default function Navbar() {
             {/* 📦 Other Pages */}
             <li>
               <Link
-                className={path === "/Products" ? "active" : ""}
+                className={`${path === "/Products" ? "active" : ""} hover:text-[#F9A08B]`}
                 href="/Products"
               >
                 All Products
@@ -69,7 +69,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                className={path === "/Categories" ? "active" : ""}
+                className={`${path === "/Categories" ? "active" : ""} hover:text-[#F9A08B]`}
                 href="/Categories"
               >
                 Categories
@@ -77,7 +77,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                className={path === "/Brands" ? "active" : ""}
+                className={`${path === "/Brands" ? "active" : ""} hover:text-[#F9A08B]`}
                 href="/Brands"
               >
                 Brands
@@ -87,7 +87,7 @@ export default function Navbar() {
             {session && (
               <li>
                 <Link
-                  className={path === "/Address" ? "active" : ""}
+                  className={`${path === "/Address" ? "active" : ""} hover:text-[#F9A08B]`}
                   href="/Address"
                 >
                   Address
@@ -98,7 +98,7 @@ export default function Navbar() {
             {/* 💖 Wishlist */}
             <li className="relative">
               <Link
-                className={`relative ${path === "/WishList" ? "active" : ""}`}
+                className={`relative ${path === "/WishList" ? "active" : ""} hover:text-[#F9A08B]`}
                 href="/WishList"
               >
                 WishList
@@ -121,7 +121,7 @@ export default function Navbar() {
               <>
                 <li>
                   <Link
-                    className={path === "/Register" ? "active" : ""}
+                    className={`${path === "/Register" ? "active" : ""} hover:text-[#F9A08B]`}
                     href="/Register"
                   >
                     Signup
@@ -129,7 +129,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <Link
-                    className={path === "/Login" ? "active" : ""}
+                    className={`${path === "/Login" ? "active" : ""} hover:text-[#F9A08B]`}
                     href="/Login"
                   >
                     Signin
@@ -138,7 +138,7 @@ export default function Navbar() {
               </>
             ) : (
               <li>
-                <span className="cursor-pointer" onClick={Logout}>
+                <span className="cursor-pointer hover:text-[#F9A08B]" onClick={Logout}>
                   Logout
                 </span>
               </li>
