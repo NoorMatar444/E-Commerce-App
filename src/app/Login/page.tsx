@@ -84,6 +84,12 @@ export default function Login() {
         </Form>
         
       </div>
+
+      <div className="StickyNote container w-1/2 mx-auto my-5 shadow-lg rounded-lg p-5 mt-5 ">
+              <h1 className="text-center mb-5">StickyNote</h1>
+              <p>Email: omar2026@gmail.com </p>
+              <p>Password: 123456</p>
+      </div>
     </>
   );
 }
